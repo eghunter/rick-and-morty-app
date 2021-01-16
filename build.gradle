@@ -9,8 +9,8 @@ buildscript {
 
     ext {
         kotlin_version = '1.4.21'
-        dagger_version = "2.24"
-        navigation_version = "2.1.0-beta02"
+        dagger_version = '2.31'
+        navigation_version = "2.3.2"
     }
     repositories {
         google()
