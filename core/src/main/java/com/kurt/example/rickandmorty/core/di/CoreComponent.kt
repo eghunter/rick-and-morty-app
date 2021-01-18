@@ -7,7 +7,7 @@ import com.kurt.example.rickandmorty.core.domain.repositories.CharactersReposito
 import com.kurt.example.rickandmorty.core.domain.repositories.EpisodesRepository
 import com.kurt.example.rickandmorty.core.domain.repositories.LocationsRepository
 import dagger.Component
-import sfg.kmm.api.Platform
+import sfg.kmm.api.domain.usecase.GetAllCharacters
 
 /**
  * Copyright 2019, Kurt Renzo Acosta, All rights reserved.
@@ -18,6 +18,7 @@ import sfg.kmm.api.Platform
 @Component(
     modules = [
         CharactersModule::class,
+        KmmCharactersModule::class,
         EpisodesModule::class,
         LocationsModule::class,
         NetworkModule::class
@@ -30,4 +31,5 @@ interface CoreComponent {
     fun provideEpisodesRemoteSource(): EpisodesRemoteSource
     fun provideLocationsRepository(): LocationsRepository
     fun provideLocationsRemoteSource(): LocationsRemoteSource
+    fun provideGetAllCharacters(): GetAllCharacters
 }

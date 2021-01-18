@@ -8,7 +8,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kurt.example.rickandmorty.characters.R
-import com.kurt.example.rickandmorty.core.domain.entities.Character
+import sfg.kmm.api.dto.Character
 import com.kurt.example.rickandmorty.core.presentation.BasePagedListAdapter
 
 /**

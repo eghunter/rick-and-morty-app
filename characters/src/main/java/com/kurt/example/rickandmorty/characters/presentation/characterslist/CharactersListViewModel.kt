@@ -3,9 +3,9 @@ package com.kurt.example.rickandmorty.characters.presentation.characterslist
 import androidx.lifecycle.*
 import androidx.paging.LivePagedListBuilder
 import androidx.paging.PagedList
-import com.kurt.example.rickandmorty.core.domain.usecases.GetAllCharacters
-import com.kurt.example.rickandmorty.core.domain.entities.Character
+import sfg.kmm.api.dto.Character
 import com.kurt.example.rickandmorty.core.presentation.UiState
+import sfg.kmm.api.domain.usecase.GetAllCharacters
 import javax.inject.Inject
 
 /**

@@ -4,12 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.paging.DataSource
 import androidx.paging.PageKeyedDataSource
-import com.kurt.example.rickandmorty.core.domain.usecases.GetAllCharacters
-import com.kurt.example.rickandmorty.core.domain.entities.Character
 import com.kurt.example.rickandmorty.core.presentation.UiState
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
+import sfg.kmm.api.domain.usecase.GetAllCharacters
+import sfg.kmm.api.dto.Character
 
 /**
  * Copyright 2019, Kurt Renzo Acosta, All rights reserved.
@@ -73,5 +73,4 @@ class CharactersDataSource(
             _getCharactersState.postValue(UiState.Complete)
         }
     }
-
 }
