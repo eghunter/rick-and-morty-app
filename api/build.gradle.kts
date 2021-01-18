@@ -6,7 +6,7 @@ plugins {
 
 kotlin {
     val ktorVersion = "1.5.0"
-    val serializationVersion = "1.0.0-RC"
+    val serializationVersion = "1.0.1"
     val coroutinesVersion = "1.3.9-native-mt"
     val ktorLoggingVersion = "1.3.1"
 
@@ -22,7 +22,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
-                implementation("io.ktor:ktor-client-core:$ktorVersion")
+                api("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging:$ktorLoggingVersion")
@@ -36,7 +36,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-android:$ktorVersion")
+                api("io.ktor:ktor-client-android:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging-jvm:$ktorLoggingVersion")
                 implementation("org.slf4j:slf4j-android:1.7.7")
             }
@@ -59,7 +59,7 @@ kotlin {
 android {
     compileSdkVersion(29)
     defaultConfig {
-        minSdkVersion(24)
+        minSdkVersion(21)
         targetSdkVersion(29)
     }
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")

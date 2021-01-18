@@ -21,6 +21,12 @@ android {
     compileOptions {
         targetCompatibility = 1.8
     }
+
+    packagingOptions {
+        exclude 'META-INF/common.kotlin_module'
+        exclude 'META-INF/ktor-client-logging.kotlin_module'
+        exclude 'META-INF/*.kotlin_module'
+    }
 }
 
 dependencies {
