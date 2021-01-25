@@ -2,6 +2,7 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization")
+    kotlin("native.cocoapods")
 }
 
 kotlin {
@@ -11,13 +12,22 @@ kotlin {
     val ktorLoggingVersion = "1.3.1"
 
     android()
-    ios {
-        binaries {
-            framework {
-                baseName = "api"
-            }
-        }
+
+    version = "1.0.0"
+
+    ios()
+
+    cocoapods {
+        // Configure fields required by CocoaPods.
+        summary = "Some description for a Kotlin/Native module"
+        homepage = "Link to a Kotlin/Native module homepage"
+
+        // You can change the name of the produced framework.
+        // By default, it is the name of the Gradle project.
+        frameworkName = "api"
+        ios.deploymentTarget = "13.5"
     }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
@@ -25,7 +35,7 @@ kotlin {
                 api("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
-                implementation("io.ktor:ktor-client-logging:$ktorLoggingVersion")
+                implementation("io.ktor:ktor-client-logging:$ktorVersion")
             }
         }
         val commonTest by getting {
@@ -37,7 +47,7 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 api("io.ktor:ktor-client-android:$ktorVersion")
-                implementation("io.ktor:ktor-client-logging-jvm:$ktorLoggingVersion")
+                implementation("io.ktor:ktor-client-logging-jvm:$ktorVersion")
                 implementation("org.slf4j:slf4j-android:1.7.7")
             }
         }
@@ -50,7 +60,7 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-ios:$ktorVersion")
-                implementation("io.ktor:ktor-client-logging-native:$ktorLoggingVersion")
+                implementation("io.ktor:ktor-client-logging-native:1.3.2-1.4-M1-2")
             }
         }
     }
