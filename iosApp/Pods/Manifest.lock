@@ -1,0 +1,16 @@
+PODS:
+  - api (1.0.0)
+
+DEPENDENCIES:
+  - api (from `/Volumes/HD - Data/Working/Practice/KMM/rick-and-morty-app/api`)
+
+EXTERNAL SOURCES:
+  api:
+    :path: "/Volumes/HD - Data/Working/Practice/KMM/rick-and-morty-app/api"
+
+SPEC CHECKSUMS:
+  api: a5098db298608fcd4e292a5fbae8c7ae5c8b23f2
+
+PODFILE CHECKSUM: a9cba6a490f589af0fa709519446185bccb1144d
+
+COCOAPODS: 1.10.1
