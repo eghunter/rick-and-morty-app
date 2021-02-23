@@ -6,6 +6,6 @@ target 'Rick and Morty' do
   use_frameworks!
 
   # Pods for Rick and Morty
-  pod "api", :path => '/Volumes/HD - Data/Working/Practice/KMM/rick-and-morty-app/api'
+  pod "api", :path => '../api'
 
 end

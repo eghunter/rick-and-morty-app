@@ -37,17 +37,17 @@
 
 /* Begin PBXFileReference section */
 		11C45296AE0AF2520441DE12F51B8BE0 /* Pods-Rick and Morty-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Rick and Morty-dummy.m"; sourceTree = "<group>"; };
-		13BC0430171C46EFA0E9B93B61C6D321 /* api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = api.debug.xcconfig; sourceTree = "<group>"; };
-		2977A89A917B7BCB71D9B5FEDBCD2127 /* api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = api.release.xcconfig; sourceTree = "<group>"; };
+		2CB0A3F028CED51A3A7E857168B0A408 /* api.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = api.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		33B8C1012C37F8329D7045019B6ED359 /* Pods-Rick and Morty.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Rick and Morty.modulemap"; sourceTree = "<group>"; };
-		4615B1D9D2F2AF66D0D52C3E3FFE50D5 /* api.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = api.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		38F4CDF349F85A5B4E11AA8454D8C2B9 /* api.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = api.framework; path = build/cocoapods/framework/api.framework; sourceTree = "<group>"; };
 		4A0A367D3C96494287237369DA394F8D /* Pods-Rick and Morty-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rick and Morty-acknowledgements.plist"; sourceTree = "<group>"; };
+		65B7E86E53D288465069F8294B342C3F /* api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = api.debug.xcconfig; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		82925967731C9E1DED806A91095FD994 /* api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = api.release.xcconfig; sourceTree = "<group>"; };
 		86C07BAAA1F1D4DD5F2071E94A25CDEF /* Pods-Rick and Morty-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Rick and Morty-acknowledgements.markdown"; sourceTree = "<group>"; };
 		91E98390BCEB5EF61125B491E125F01D /* Pods-Rick and Morty-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Rick and Morty-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		ACBC6EBB544A449C999DE4499C277717 /* Pods_Rick_and_Morty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Rick_and_Morty.framework; path = "Pods-Rick and Morty.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D20C5D6F01C154BA1AC3493D5FABC65E /* api.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = api.framework; path = build/cocoapods/framework/api.framework; sourceTree = "<group>"; };
 		D9434CEF9667DB7F441B0DBF7FCD7DE0 /* Pods-Rick and Morty-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Rick and Morty-umbrella.h"; sourceTree = "<group>"; };
 		DCE176F8EE883ED91A87C9164AD9308D /* Pods-Rick and Morty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rick and Morty.release.xcconfig"; sourceTree = "<group>"; };
 		E0380057C92141C1DC89E994ED334C3D /* Pods-Rick and Morty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Rick and Morty.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,20 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		043D492280D306EC4A00A46B91AE30D6 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				4615B1D9D2F2AF66D0D52C3E3FFE50D5 /* api.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		5A72B4D2C73DED47EAAE39DA2F1A162D /* api */ = {
+			isa = PBXGroup;
+			children = (
+				8690435AD82616B2AF26D43CD3A9512E /* Frameworks */,
+				858946755CBCF1E81A97519B5C8E410C /* Pod */,
+				7277A12A91C8816B3B2013D466AC1CC9 /* Support Files */,
+			);
+			name = api;
+			path = ../../api;
 			sourceTree = "<group>";
 		};
 		5C92CDE9905AAB06F7BDED05B834A740 /* Targets Support Files */ = {
@@ -89,12 +92,38 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		67E6C63352A485254E4470F13485AB1F /* Frameworks */ = {
+		7277A12A91C8816B3B2013D466AC1CC9 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D20C5D6F01C154BA1AC3493D5FABC65E /* api.framework */,
+				65B7E86E53D288465069F8294B342C3F /* api.debug.xcconfig */,
+				82925967731C9E1DED806A91095FD994 /* api.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../iosApp/Pods/Target Support Files/api";
+			sourceTree = "<group>";
+		};
+		858946755CBCF1E81A97519B5C8E410C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2CB0A3F028CED51A3A7E857168B0A408 /* api.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		8690435AD82616B2AF26D43CD3A9512E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38F4CDF349F85A5B4E11AA8454D8C2B9 /* api.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF88829AA9B989E648608F469F919170 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A72B4D2C73DED47EAAE39DA2F1A162D /* api */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BD27F38C9606CB68C3EDA6F861C0EEDD /* Pods-Rick and Morty */ = {
@@ -113,22 +142,11 @@
 			path = "Target Support Files/Pods-Rick and Morty";
 			sourceTree = "<group>";
 		};
-		C34641B69767092A1A3D86892B24C4B7 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				67E6C63352A485254E4470F13485AB1F /* Frameworks */,
-				043D492280D306EC4A00A46B91AE30D6 /* Pod */,
-				FDFBF21AFDDDD806762238F69746D59C /* Support Files */,
-			);
-			name = api;
-			path = "/Volumes/HD - Data/Working/Practice/KMM/rick-and-morty-app/api";
-			sourceTree = "<absolute>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				E00E67B00B4B01A464816CD8413537E8 /* Development Pods */,
+				AF88829AA9B989E648608F469F919170 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				D9AD7F4E16B3FFE52EF73F8C39A5919E /* Products */,
 				5C92CDE9905AAB06F7BDED05B834A740 /* Targets Support Files */,
@@ -149,24 +167,6 @@
 				ACBC6EBB544A449C999DE4499C277717 /* Pods_Rick_and_Morty.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		E00E67B00B4B01A464816CD8413537E8 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C34641B69767092A1A3D86892B24C4B7 /* api */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		FDFBF21AFDDDD806762238F69746D59C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				13BC0430171C46EFA0E9B93B61C6D321 /* api.debug.xcconfig */,
-				2977A89A917B7BCB71D9B5FEDBCD2127 /* api.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../../Rick and Morty/Pods/Target Support Files/api";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +342,7 @@
 		};
 		819589E1BE4267A67D3117DC0F9903A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13BC0430171C46EFA0E9B93B61C6D321 /* api.debug.xcconfig */;
+			baseConfigurationReference = 65B7E86E53D288465069F8294B342C3F /* api.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -458,7 +458,7 @@
 		};
 		E494887610C5ED41F34DA26C2DFF06CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2977A89A917B7BCB71D9B5FEDBCD2127 /* api.release.xcconfig */;
+			baseConfigurationReference = 82925967731C9E1DED806A91095FD994 /* api.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
