@@ -1,3 +1,4 @@
+include ':lib:api'
 include ':api'
 include ':app', ':core', ':characters', ':locations', ':episodes'
 rootProject.name='Rick and Morty'
