@@ -4,8 +4,7 @@ import io.ktor.client.engine.*
 import io.ktor.client.engine.ios.*
 
 actual class Platform actual constructor() {
-    actual val clientEngine: HttpClientEngineFactory<HttpClientEngineConfig>
-        get() = Ios.apply {
 
-        }
+    actual fun getClientEngine(): HttpClientEngineFactory<HttpClientEngineConfig> =
+        Ios
 }

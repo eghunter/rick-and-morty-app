@@ -5,24 +5,24 @@ import io.ktor.client.features.*
 import io.ktor.client.statement.*
 import io.ktor.util.*
 
-open class TokenExpire(val additionalInfo: String) {
+open class TokenExpire(val config: Config) {
 
-    public companion object Feature : HttpClientFeature<TokenExpireConfig, TokenExpire> {
-        override val key: AttributeKey<TokenExpire>
-            get() = AttributeKey("TokenExpire")
+    companion object Feature : HttpClientFeature<Config, TokenExpire> {
+        override val key: AttributeKey<TokenExpire> = AttributeKey("TokenExpire")
 
         override fun install(feature: TokenExpire, scope: HttpClient) {
             scope.responsePipeline
                 .intercept(HttpResponsePipeline.Parse) {
-                    print("sfhunter: TokenExpire: #${feature.additionalInfo}")
+
                 }
         }
 
-        override fun prepare(block: TokenExpireConfig.() -> Unit): TokenExpire =
+        override fun prepare(block: Config.() -> Unit): TokenExpire =
             TokenExpire(
-                TokenExpireConfig().apply(block).additionalInfo
+                Config()
+                    .apply { block() }
             )
     }
 
-    class TokenExpireConfig(var additionalInfo: String = "")
+    class Config(var additionalInfo: String = "default value")
 }

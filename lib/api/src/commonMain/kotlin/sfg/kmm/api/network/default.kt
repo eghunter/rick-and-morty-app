@@ -9,9 +9,9 @@ import io.ktor.http.*
 import sfg.kmm.api.network.feature.Auth
 import sfg.kmm.api.network.feature.TokenExpire
 
-val defaultClient: (String, TokenProvider) -> HttpClient =
+val defaultClient: (host: String, tokenProvider: TokenProvider) -> HttpClient =
     { host, tokenProvider ->
-        HttpClient(Platform().clientEngine) {
+        HttpClient(Platform().getClientEngine()) {
             install(JsonFeature) {
                 serializer = KotlinxSerializer(kotlinx.serialization.json.Json {
                     prettyPrint = true
@@ -22,23 +22,22 @@ val defaultClient: (String, TokenProvider) -> HttpClient =
 
             install(Logging) {
                 logger = Logger.DEFAULT
-                level = LogLevel.BODY
+                level = LogLevel.ALL
             }
 
             install(DefaultRequest) {
                 url {
                     protocol = URLProtocol.HTTPS
                     this.host = host
-                    body = defaultSerializer().write(body)
                 }
             }
 
             install(TokenExpire) {
-                additionalInfo = "sfHunter logging"
+                additionalInfo = "Token expire here"
             }
 
             install(Auth) {
-                authenticationInfo = tokenProvider.token
+                authenticationInfo = tokenProvider.getToken()
             }
         }
     }

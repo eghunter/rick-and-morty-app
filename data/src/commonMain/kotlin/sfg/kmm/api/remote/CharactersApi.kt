@@ -1,16 +1,22 @@
 package sfg.kmm.api.remote
 
-import sfg.kmm.api.network.Request
+import io.ktor.client.*
+import io.ktor.client.request.*
 import sfg.kmm.api.dto.Character
 import sfg.kmm.api.dto.RickAndMortyResponse
 
-class CharactersApi(val request: Request) {
+class CharactersApi(private val client: HttpClient) {
     suspend fun getAllCharacters(page: Int? = null): RickAndMortyResponse<Character> =
-        request.get("/character?page=${page}")
+        client.get {
+            url {
+                encodedPath = "/character"
+                parameter("page", page)
+            }
+        }
 
     suspend fun getCharacters(characterIds: List<Int>): List<Character> =
-        request.get("/character/${characterIds}")
+        client.get("/character/${characterIds}")
 
     suspend fun getCharacter(characterId: Int): Character =
-        request.get("/character/${characterId}")
+        client.get("/character/${characterId}")
 }

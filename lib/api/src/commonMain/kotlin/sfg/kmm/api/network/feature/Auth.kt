@@ -8,13 +8,11 @@ import io.ktor.util.*
 open class Auth(val authenticationInfo: String) {
 
     public companion object Feature : HttpClientFeature<Config, Auth> {
-        override val key: AttributeKey<Auth>
-            get() = AttributeKey("TokenExpire")
+        override val key: AttributeKey<Auth> = AttributeKey("TokenExpire")
 
         override fun install(feature: Auth, scope: HttpClient) {
             scope.requestPipeline
                 .intercept(HttpRequestPipeline.Before) {
-                    print("sfhunter: Auth: #${feature.authenticationInfo}")
                     context.header("Authentication", feature.authenticationInfo)
                 }
         }

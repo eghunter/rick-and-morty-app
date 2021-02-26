@@ -9,7 +9,6 @@ kotlin {
     val ktorVersion = "1.5.0"
     val serializationVersion = "1.0.1"
     val coroutinesVersion = "1.3.9-native-mt"
-    val ktorLoggingVersion = "1.3.1"
 
     android()
 
@@ -36,6 +35,7 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:$serializationVersion")
                 implementation("io.ktor:ktor-client-serialization:$ktorVersion")
                 implementation("io.ktor:ktor-client-logging:$ktorVersion")
+                implementation(project(path = ":lib:api"))
             }
         }
         val commonTest by getting {
